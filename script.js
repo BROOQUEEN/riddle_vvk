@@ -3,11 +3,14 @@ function modal() {
 };
 
 function crossingRight(transfer) {
+    
     if (transfer === "Волк") {
-        delete leftCoast.peasant;
-        delete leftCoast.wolf;
-        rightCoast.peasant = peasant;
-        rightCoast.wolf = wolf;
+        if (leftCoast == leftCoast.goat && leftCoast.cabbage && leftCoast.peasant && leftCoast.wolf) {
+            delete leftCoast.peasant;
+            delete leftCoast.wolf;
+            rightCoast.peasant = peasant;
+            rightCoast.wolf = wolf;
+        }
 
         iconWolf.style.left = '85%';
         iconWolf.style.top = '80%';
@@ -20,17 +23,21 @@ function crossingRight(transfer) {
         // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
         // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
         
-
+        
         if (leftCoast = leftCoast.cabbage && leftCoast.goat) {
             modalka.style.display = "flex";
             console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
         };
 
     } else if (transfer === "Капуста") {
-        delete leftCoast.peasant;
-        delete leftCoast.cabbage;
-        rightCoast.peasant = peasant;
-        rightCoast.cabbage = cabbage;
+        if (leftCoast = leftCoast.cabbage && leftCoast.goat && leftCoast.wolf && leftCoast.peasant) {
+            modalka.style.display = "flex";
+            console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
+            delete leftCoast.peasant;
+            delete leftCoast.cabbage;
+            rightCoast.peasant = peasant;
+            rightCoast.cabbage = cabbage;
+        };
 
         iconCabbage.style.left = '85%';
         iconCabbage.style.top = '64%';
@@ -76,6 +83,9 @@ function crossingRight(transfer) {
 
 function crossingLeft(transfer) {
     if (transfer === "Человек") {
+        delete rightCoast.peasant;
+        leftCoast.peasant = peasant;
+
         iconBoat.style.top = '60%';
         iconBoat.style.left = '10%';
 
@@ -83,6 +93,16 @@ function crossingLeft(transfer) {
         leftGoat.style.display = "none";
 
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы вернули крестьянина (одного) на левый берег</b></p></div></li>');
+
+    } else if (transfer === "Коза") {
+        leftGoat.style.display = "none";
+        iconGoat.style.top = '35%';
+        iconGoat.style.left = '31%';
+
+        iconBoat.style.top = '60%';
+        iconBoat.style.left = '10%';
+
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы вернули козу на левый берег</b></p></div></li>');
 
     };
 
