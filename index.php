@@ -13,6 +13,14 @@
         require_once "connectionDB.php";
     ?>
 
+    <section class="modal" id="modal">
+        <div class="modal-block">
+            <h3 class="modal__title">Вы проиграли!</h3>
+            <p class="modal__text">Волк съел козу</p>
+            <button class="modal__btn" onclick="modal()">Начать сначала</button>
+        </div>
+    </section>
+
     <!-- <h1>Игра "Волк, коза и капуста"</h1> -->
     <main class="main">
         <section class="section__left">

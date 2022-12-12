@@ -1,3 +1,7 @@
+function modal() {
+    window.location.reload();
+};
+
 function crossingRight(transfer) {
     if (transfer === "Волк") {
         delete leftCoast.peasant;
@@ -18,6 +22,7 @@ function crossingRight(transfer) {
         
 
         if (leftCoast = leftCoast.cabbage && leftCoast.goat) {
+            modalka.style.display = "flex";
             console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
         };
 
@@ -70,13 +75,6 @@ function crossingRight(transfer) {
     };
 };
 
-
-
-
-
-
-
-
 (function () {
     var old = console.log;
     var logger = document.getElementById('log');
@@ -88,6 +86,10 @@ function crossingRight(transfer) {
         }
     }
 })();
+
+let modalka = document.getElementById('modal');
+
+modalka.style.display = "none";
 
 let peasant = "Человек",
     wolf = "Волк",
