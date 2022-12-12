@@ -7,10 +7,16 @@ function crossingRight(transfer) {
 
         iconWolf.style.left = '85%';
         iconWolf.style.top = '80%';
+
+        rightWolf.style.display = "none";
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили волка на правый берег</b></p></div></li>');
         // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
         // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
-        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>ПОРАЖЕНИЕ:</b> КОЗА СЪЕЛА КАПУСТУ</p></div></li>');
-        // console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
+        
+
+        if (leftCoast = leftCoast.cabbage && leftCoast.goat) {
+            console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
+        };
 
     } else if (transfer === "Капуста") {
         delete leftCoast.peasant;
@@ -20,9 +26,15 @@ function crossingRight(transfer) {
         iconCabbage.style.left = '85%';
         iconCabbage.style.top = '64%';
 
-        console.log("2) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.goat);
-        console.log("2) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.cabbage);
-        console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
+        rightCabbage.style.display = "none";
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили капусту на правый берег</b></p></div></li>');
+        // console.log("2) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.goat);
+        // console.log("2) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.cabbage);
+        
+
+        if (leftCoast = leftCoast.wolf && leftCoast.goat) {
+            console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
+        };
     } else if (transfer === "Коза") {
         delete leftCoast.peasant;
         delete leftCoast.goat;
@@ -32,9 +44,11 @@ function crossingRight(transfer) {
         iconGoat.style.left = '75%';
         iconGoat.style.top = '80%';
 
-        
-        console.log("3) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.cabbage);
-        console.log("3) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.goat);
+        rightGoat.style.display = "none";
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили козу на правый берег</b></p></div></li>');
+
+        // console.log("3) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.cabbage);
+        // console.log("3) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.goat);
     } else {
         console.log("Что то пошло не так");
     };
@@ -74,8 +88,8 @@ let iconWolf = document.getElementById('iconWolf'),
     iconCabbage = document.getElementById('iconCabbage'),
     iconGoat = document.getElementById('iconGoat');
 
-
-
+    leftPeasant.style.display = "none";
+    leftGoat.style.display = "none";
 
 
 

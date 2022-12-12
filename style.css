@@ -137,7 +137,6 @@
     font-size: 22px;
     line-height: 35px;
     cursor: pointer;
-    display: none;
 }
 .btn:first-child {
     margin-left: 0;
