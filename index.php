@@ -78,6 +78,7 @@
                     <button class="btn" id="rightGoat" onclick ="crossingRight('Коза')">Перевести козу</button>
                     <button class="btn" id="leftGoat" onclick ="crossingLeft('Коза')">Вернуть козу</button>
                     <button class="btn" id="rightCabbage" onclick ="crossingRight('Капуста')">Перевести Капусту</button>
+                    <button class="btn" id="leftCabbage" onclick ="crossingLeft('Капуста')">Вернуть Капусту</button>
                     <button class="btn" id="rightWolf" onclick ="crossingRight('Волк')">Перевести Волка</button>
                     <button class="btn" id="leftPeasant" onclick ="crossingLeft('Человек')">Вернуть Крестьянина</button>
                 </ul>
