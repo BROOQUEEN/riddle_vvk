@@ -92,6 +92,17 @@ function crossingRight(transfer) {
     console.log(rightCoast);
 };
 
+
+
+
+
+
+
+
+
+
+
+
 function crossingLeft(transfer) {
     if (transfer === "Человек") {
         delete rightCoast.peasant;
@@ -106,6 +117,12 @@ function crossingLeft(transfer) {
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы вернули крестьянина (одного) на левый берег</b></p></div></li>');
 
     } else if (transfer === "Коза") {
+        if (rightCoast.hasOwnProperty('peasant') & rightCoast.hasOwnProperty('goat') & rightCoast.hasOwnProperty('cabbage')) {
+            delete rightCoast.peasant;
+            delete rightCoast.goat;
+            leftCoast.peasant = peasant;
+            leftCoast.goat = goat;
+        };
         leftGoat.style.display = "none";
         iconGoat.style.top = '35%';
         iconGoat.style.left = '31%';
