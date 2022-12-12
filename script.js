@@ -35,6 +35,7 @@ function crossingRight(transfer) {
         if (leftCoast = leftCoast.wolf && leftCoast.goat) {
             console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
         };
+        
     } else if (transfer === "Коза") {
         delete leftCoast.peasant;
         delete leftCoast.goat;

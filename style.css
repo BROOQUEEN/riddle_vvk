@@ -53,7 +53,8 @@
 .result__block {
 }
 .result__lists {
-    
+    display: flex;
+    flex-direction: column-reverse;
 }
 .result__item {
     font-weight: 500;
