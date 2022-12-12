@@ -191,6 +191,16 @@ function crossingLeft(transfer) {
             leftWolf.style.display = "none";
 
             rightGoat.style.display = "block";
+        }
+        // если справо Человек, Коза, Волк
+        else if (rightCoast.hasOwnProperty('peasant') & rightCoast.hasOwnProperty('goat') & !rightCoast.hasOwnProperty('cabbage') & rightCoast.hasOwnProperty('wolf')){
+            delete rightCoast.peasant;
+            leftCoast.peasant = peasant;
+        }
+        // если справо Человек, Коза, Капуста
+        else if (rightCoast.hasOwnProperty('peasant') & rightCoast.hasOwnProperty('goat') & rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('wolf')) {
+            delete rightCoast.peasant;
+            leftCoast.peasant = peasant;
         };
 
         delete rightCoast.peasant;
