@@ -28,7 +28,7 @@
             <div class="result__block block">
                 <h3 class="regulations__title">Результаты</h3>
                 <div class="regulations__container">
-                    <ul class="result__lists">
+                    <ul class="result__lists" id="log">
                     <?php
                         $sql = "Select * from `result`";
                         $result = mysqli_query($connect, $sql);
@@ -54,14 +54,6 @@
                         }
                         ?>
                         
-                        <li class="result__item">
-                            <div class="result__item-status">
-                                <p>Событие</p>
-                            </div>
-                            <div class="result__item-text">
-                                <p id="log"></p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>

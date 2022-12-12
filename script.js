@@ -5,9 +5,10 @@ function crossingRight(transfer) {
         rightCoast.peasant = peasant;
         rightCoast.wolf = wolf;
 
-        console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
-        console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
-        console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
+        // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
+        // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>ПОРАЖЕНИЕ:</b> КОЗА СЪЕЛА КАПУСТУ</p></div></li>');
+        // console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
 
     } else if (transfer === "Капуста") {
         delete leftCoast.peasant;
