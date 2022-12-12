@@ -5,11 +5,13 @@ function modal() {
 function crossingRight(transfer) {
     
     if (transfer === "Волк") {
-        if (leftCoast == leftCoast.goat && leftCoast.cabbage && leftCoast.peasant && leftCoast.wolf) {
+        if (leftCoast.goat && leftCoast.cabbage && leftCoast.peasant && leftCoast.wolf) {
+            
             delete leftCoast.peasant;
             delete leftCoast.wolf;
             rightCoast.peasant = peasant;
             rightCoast.wolf = wolf;
+            console.log(leftCoast);
         }
 
         iconWolf.style.left = '85%';
@@ -24,19 +26,23 @@ function crossingRight(transfer) {
         // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
         
         
-        if (leftCoast = leftCoast.cabbage && leftCoast.goat) {
+        if (leftCoast.cabbage && leftCoast.goat) {
             modalka.style.display = "flex";
             console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
         };
 
     } else if (transfer === "Капуста") {
-        if (leftCoast = leftCoast.cabbage && leftCoast.goat && leftCoast.wolf && leftCoast.peasant) {
-            modalka.style.display = "flex";
-            console.log("<h1>ПОРАЖЕНИЕ: КОЗА СЪЕЛА КАПУСТУ</h1>");
+        // Если слева есть все, то Поражение, т.к. волк остался с козой
+        if ('goat' && 'gabbage' && 'wolf' && 'peasant' in leftCoast) {
+            
             delete leftCoast.peasant;
             delete leftCoast.cabbage;
             rightCoast.peasant = peasant;
             rightCoast.cabbage = cabbage;
+
+            setTimeout(() => {modalka.style.display = "flex";}, 1000);
+
+            
         };
 
         iconCabbage.style.left = '85%';
@@ -51,10 +57,16 @@ function crossingRight(transfer) {
         // console.log("2) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.cabbage);
         
 
-        if (leftCoast = leftCoast.wolf && leftCoast.goat) {
-            modalka.style.display = "flex";
-            console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
-        };
+        // if (leftCoast.wolf && leftCoast.goat) {
+
+        //     console.log("Должно работать потом!!!!!!");
+        //     console.log(leftCoast.goat in leftCoast);
+        //     console.log("Должно работать потом!!!!!!");
+
+
+        //     modalka.style.display = "flex";
+        //     console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
+        // };
 
     } else if (transfer === "Коза") {
         delete leftCoast.peasant;
@@ -109,7 +121,7 @@ function crossingLeft(transfer) {
     };
 
     // Если на левом берегу остались Волк и Капуста
-    if (leftCoast = leftCoast.cabbage && leftCoast.wolf) {
+    if (leftCoast.cabbage && leftCoast.wolf) {
         rightWolf.style.display = "block";
         rightCabbage.style.display = "block";
         
@@ -162,7 +174,7 @@ let iconWolf = document.getElementById('iconWolf'),
     leftGoat.style.display = "none";
 
 
-
+    
     // console.log(leftCoast);
 
 
