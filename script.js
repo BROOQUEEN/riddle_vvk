@@ -3,14 +3,15 @@ function modal() {
 };
 
 function crossingRight(transfer) {
-    
     if (transfer === "Волк") {
-        if ('goat' && 'cabbage' && 'peasant' && 'wolf' in leftCoast) {
+        if (leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage') & leftCoast.hasOwnProperty('peasant')) {
             delete leftCoast.peasant;
             delete leftCoast.wolf;
             rightCoast.peasant = peasant;
             rightCoast.wolf = wolf;
-        }
+        } else if (leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('wolf') & !leftCoast.hasOwnProperty('cabbage') & leftCoast.hasOwnProperty('peasant')) {
+            console.log("WWWWWWWWWWWWWWWWWWWWWWWWWW");
+        };
 
         iconWolf.style.left = '85%';
         iconWolf.style.top = '80%';
@@ -23,26 +24,17 @@ function crossingRight(transfer) {
         // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
         // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
         
-        
-        if ('cabbage' && leftCoast.goat) {
-            setTimeout(() => {modalka.style.display = "flex";}, 1000);
-        };
+    
 
     } else if (transfer === "Капуста") {
         // Если слева есть все, то Поражение, т.к. волк остался с козой
         if (leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage') & leftCoast.hasOwnProperty('peasant')) {
-            console.log('ПЕРВОЕ УСЛОВИЕ');
             delete leftCoast.peasant;
             delete leftCoast.cabbage;
             rightCoast.peasant = peasant;
             rightCoast.cabbage = cabbage;
-            setTimeout(() => {modalka.style.display = "flex";}, 1000);
         } else if (leftCoast.hasOwnProperty('peasant') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage')) {
             // все есть кроме козы
-            console.log('ВТОРОЕ УСЛОВИЕ');
-            console.log('все есть кроме козы');
-
-            
             delete leftCoast.cabbage;
             delete leftCoast.peasant;
             rightCoast.peasant = peasant;
@@ -90,6 +82,12 @@ function crossingRight(transfer) {
     };
     console.log(leftCoast);
     console.log(rightCoast);
+
+    if (leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('wolf') & !leftCoast.hasOwnProperty('cabbage') & !leftCoast.hasOwnProperty('peasant')) {
+        setTimeout(() => {modalka.style.display = "flex";}, 1000);
+    } else if (leftCoast.hasOwnProperty('goat') & !leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage') & !leftCoast.hasOwnProperty('peasant')) {
+        setTimeout(() => {modalka.style.display = "flex";}, 1000);
+    };
 };
 
 
@@ -122,6 +120,12 @@ function crossingLeft(transfer) {
             delete rightCoast.goat;
             leftCoast.peasant = peasant;
             leftCoast.goat = goat;
+
+            leftCabbage.style.display = "none";
+            leftPeasant.style.display = "none";
+
+            rightWolf.style.display = "block";
+            rightGoat.style.display = "block";
         };
         leftGoat.style.display = "none";
         iconGoat.style.top = '35%';
@@ -142,6 +146,12 @@ function crossingLeft(transfer) {
     };
     console.log(leftCoast);
     console.log(rightCoast);
+
+    if (rightCoast.hasOwnProperty('goat') & rightCoast.hasOwnProperty('wolf') & !rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('peasant')) {
+        setTimeout(() => {modalka.style.display = "flex";}, 1000);
+    } else if (rightCoast.hasOwnProperty('goat') & !rightCoast.hasOwnProperty('wolf') & rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('peasant')) {
+        setTimeout(() => {modalka.style.display = "flex";}, 1000);
+    };
 };
 
 (function () {
