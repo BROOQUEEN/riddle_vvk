@@ -5,6 +5,8 @@ function crossingRight(transfer) {
         rightCoast.peasant = peasant;
         rightCoast.wolf = wolf;
 
+        iconWolf.style.left = '85%';
+        iconWolf.style.top = '80%';
         // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
         // console.log("1) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.wolf);
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>ПОРАЖЕНИЕ:</b> КОЗА СЪЕЛА КАПУСТУ</p></div></li>');
@@ -15,6 +17,8 @@ function crossingRight(transfer) {
         delete leftCoast.cabbage;
         rightCoast.peasant = peasant;
         rightCoast.cabbage = cabbage;
+        iconCabbage.style.left = '85%';
+        iconCabbage.style.top = '64%';
 
         console.log("2) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.goat);
         console.log("2) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.cabbage);
@@ -24,6 +28,9 @@ function crossingRight(transfer) {
         delete leftCoast.goat;
         rightCoast.peasant = peasant;
         rightCoast.goat = goat;
+
+        iconGoat.style.left = '75%';
+        iconGoat.style.top = '80%';
 
         
         console.log("3) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.cabbage);
@@ -57,13 +64,15 @@ let peasant = "Человек",
     },
     rightCoast = {};
 
-let rightGoat = getElementById('rightGoat'),
-    rightCabbage = getElementById('rightCabbage'),
-    rightWolf = getElementById('rightWolf'),
-    leftPeasant = getElementById('leftPeasant'),
-    leftGoat = getElementById('leftGoat');
+let rightGoat = document.getElementById('rightGoat'),
+    rightCabbage = document.getElementById('rightCabbage'),
+    rightWolf = document.getElementById('rightWolf'),
+    leftPeasant = document.getElementById('leftPeasant'),
+    leftGoat = document.getElementById('leftGoat');
 
-    
+let iconWolf = document.getElementById('iconWolf'),
+    iconCabbage = document.getElementById('iconCabbage'),
+    iconGoat = document.getElementById('iconGoat');
 
 
 

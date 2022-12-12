@@ -95,6 +95,7 @@
 }
 .icon {
     position: absolute;
+    transition: 1.6s;
 }
 .icon {
     width: 150px;
