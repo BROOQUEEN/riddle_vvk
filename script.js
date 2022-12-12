@@ -79,6 +79,8 @@ function crossingRight(transfer) {
     } else {
         console.log("Что то пошло не так");
     };
+    console.log(leftCoast);
+    console.log(rightCoast);
 };
 
 function crossingLeft(transfer) {
@@ -111,8 +113,10 @@ function crossingLeft(transfer) {
         rightWolf.style.display = "block";
         rightCabbage.style.display = "block";
         
-    }
-}
+    };
+    console.log(leftCoast);
+    console.log(rightCoast);
+};
 
 (function () {
     var old = console.log;
