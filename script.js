@@ -7,8 +7,10 @@ function crossingRight(transfer) {
 
         iconWolf.style.left = '85%';
         iconWolf.style.top = '80%';
-        iconBoat.style.left = '63%';
+        iconBoat.style.top = '77%';
+        iconBoat.style.left = '50%';
 
+        leftPeasant.style.display = "block";
         rightWolf.style.display = "none";
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили волка на правый берег</b></p></div></li>');
         // console.log("1) На левом берегу остались: " + leftCoast.cabbage + " и " + leftCoast.goat);
@@ -24,9 +26,13 @@ function crossingRight(transfer) {
         delete leftCoast.cabbage;
         rightCoast.peasant = peasant;
         rightCoast.cabbage = cabbage;
+
         iconCabbage.style.left = '85%';
         iconCabbage.style.top = '64%';
+        iconBoat.style.top = '77%';
+        iconBoat.style.left = '50%';
 
+        leftPeasant.style.display = "block";
         rightCabbage.style.display = "none";
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили капусту на правый берег</b></p></div></li>');
         // console.log("2) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.goat);
@@ -45,16 +51,31 @@ function crossingRight(transfer) {
 
         iconGoat.style.left = '75%';
         iconGoat.style.top = '80%';
+        iconBoat.style.top = '77%';
+        iconBoat.style.left = '50%';
 
+        leftPeasant.style.display = "block";
         rightGoat.style.display = "none";
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили козу на правый берег</b></p></div></li>');
 
         // console.log("3) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.cabbage);
         // console.log("3) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.goat);
+    } else if (transfer === "Человек") {
+        iconBoat.style.top = '60%';
+        iconBoat.style.left = '10%';
+
+        leftPeasant.style.display = "none";
     } else {
         console.log("Что то пошло не так");
     };
 };
+
+
+
+
+
+
+
 
 (function () {
     var old = console.log;
