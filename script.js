@@ -53,10 +53,10 @@ function crossingRight(transfer) {
             delete leftCoast.cabbage;
             rightCoast.peasant = peasant;
             rightCoast.cabbage = cabbage;
-        } // если слева Человек, Волк, Капуста
-        
+        } 
+        // если слева Человек, Волк, Капуста
         else if (leftCoast.hasOwnProperty('peasant') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage')) {
-            // все есть кроме козы
+            
             delete leftCoast.cabbage;
             delete leftCoast.peasant;
             rightCoast.peasant = peasant;
@@ -145,16 +145,23 @@ function crossingRight(transfer) {
     console.log(leftCoast);
     console.log(rightCoast);
 
+    // Проверка на поражение:
+    // Если слева наедине Коза и Волк
     if (leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('wolf') & !leftCoast.hasOwnProperty('cabbage') & !leftCoast.hasOwnProperty('peasant')) {
         setTimeout(() => {modalka.style.display = "flex";}, 1000);
-    } else if (leftCoast.hasOwnProperty('goat') & !leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage') & !leftCoast.hasOwnProperty('peasant')) {
+            loseGoat.style.display = "flex";
+    } 
+    // Если слева наедине Коза и Капуста
+    else if (leftCoast.hasOwnProperty('goat') & !leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage') & !leftCoast.hasOwnProperty('peasant')) {
         setTimeout(() => {modalka.style.display = "flex";}, 1000);
+        loseGabbage.style.display = "flex";
     };
 
 
     // Проверка на победу
     if (rightCoast.hasOwnProperty('peasant') & rightCoast.hasOwnProperty('goat') & rightCoast.hasOwnProperty('cabbage') & rightCoast.hasOwnProperty('wolf')) {
-        alert("Победа!!!!");
+        setTimeout(() => {modalka.style.display = "flex";}, 1000);
+        win.style.display = "flex";
     };
 
 };
@@ -256,10 +263,15 @@ function crossingLeft(transfer) {
     console.log(leftCoast);
     console.log(rightCoast);
 
+    // Если справо вместе Коза и Волк
     if (rightCoast.hasOwnProperty('goat') & rightCoast.hasOwnProperty('wolf') & !rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('peasant')) {
         setTimeout(() => {modalka.style.display = "flex";}, 1000);
-    } else if (rightCoast.hasOwnProperty('goat') & !rightCoast.hasOwnProperty('wolf') & rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('peasant')) {
+        loseGoat.style.display = "flex";
+    } 
+    // Если справо вместе Коза и Капуста
+    else if (rightCoast.hasOwnProperty('goat') & !rightCoast.hasOwnProperty('wolf') & rightCoast.hasOwnProperty('cabbage') & !rightCoast.hasOwnProperty('peasant')) {
         setTimeout(() => {modalka.style.display = "flex";}, 1000);
+        loseGabbage.style.display = "flex";
     };
 };
 
@@ -309,33 +321,10 @@ let iconWolf = document.getElementById('iconWolf'),
     leftCabbage.style.display = "none";
     leftWolf.style.display = "none";
     
-    // console.log(leftCoast);
+let loseGoat = document.getElementById('lose-goat'),
+    loseGabbage = document.getElementById('lose-cabbage'),
+    win = document.getElementById('win');
 
-
-// console.log(leftCoast);
-// console.log(rightCoast);
-
-
-
-
-/*
-Алгоритм 1
-
-1) сначала переправляются крестьянин и коза
-2) крестьянин оставляет козу и возвращается обратно
-3) крестьянин переправляет волка
-4) крестьянин возвращается с козой
-5) крестьянин переправляет капусту
-6) крестьянин возвращается один
-7) крестьянин забирает козу и отправляется на другой берег
-
-Алгоритм 2
-
-1) сначала переправляются крестьянин и коза
-2) крестьянин оставляет козу и возвращается обратно
-3) крестьянин переправляет капусту
-4) крестьянин возвращается с козой
-5) крестьянин переправляет волка
-6) крестьянин возвращается один
-7) крестьянин забирает козу и отправляется на другой берег
-*/
+    loseGoat.style.display = "none";
+    loseGabbage.style.display = "none";
+    win.style.display = "none";

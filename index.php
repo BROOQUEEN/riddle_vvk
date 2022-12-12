@@ -14,10 +14,20 @@
     ?>
 
     <section class="modal" id="modal">
-        <div class="modal-block">
+        <div class="modal-block" id="lose-goat">
             <h3 class="modal__title">Вы проиграли!</h3>
             <p class="modal__text">Волк съел козу</p>
             <button class="modal__btn" onclick="modal()">Начать сначала</button>
+        </div>
+        <div class="modal-block" id="lose-cabbage">
+            <h3 class="modal__title">Вы проиграли!</h3>
+            <p class="modal__text">Коза съела капусту</p>
+            <button class="modal__btn" onclick="modal()">Начать сначала</button>
+        </div>
+        <div class="modal-block" id="win">
+            <h3 class="modal__title" style="color: blue;">Вы выйграли!</h3>
+            <p class="modal__text">Крестьянин перевез весь свой груз</p>
+            <button class="modal__btn" onclick="modal()">Сыграть еще раз</button>
         </div>
     </section>
 
