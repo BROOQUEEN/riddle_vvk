@@ -53,7 +53,9 @@ function crossingRight(transfer) {
             delete leftCoast.cabbage;
             rightCoast.peasant = peasant;
             rightCoast.cabbage = cabbage;
-        } else if (leftCoast.hasOwnProperty('peasant') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage')) {
+        } // если слева Человек, Волк, Капуста
+        
+        else if (leftCoast.hasOwnProperty('peasant') & leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('cabbage')) {
             // все есть кроме козы
             delete leftCoast.cabbage;
             delete leftCoast.peasant;
@@ -64,6 +66,18 @@ function crossingRight(transfer) {
             rightWolf.style.display = "none";
             leftGoat.style.display = "block";
             leftCabbage.style.display = "block";
+        }
+        // если слева Человек, Коза, Капуста
+        else if (leftCoast.hasOwnProperty('peasant') & !leftCoast.hasOwnProperty('wolf') & leftCoast.hasOwnProperty('goat') & leftCoast.hasOwnProperty('cabbage')) {
+            
+            delete leftCoast.cabbage;
+            delete leftCoast.peasant;
+            rightCoast.peasant = peasant;
+            rightCoast.cabbage = cabbage;
+
+            rightGoat.style.display = "none";
+            leftCabbage.style.display = "block";
+            leftWolf.style.display = "block";
         };
 
         iconCabbage.style.left = '85%';
