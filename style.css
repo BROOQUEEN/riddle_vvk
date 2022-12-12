@@ -114,6 +114,12 @@
     left: 31%;
     top: 35%;
 }
+#iconBoat {
+    position: absolute;
+    transition: 1.6s;
+    left: 10%;
+    top: 60%;
+}
 .panel {
     background-color:#E6EAF3;
     width: 100%;

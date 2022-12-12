@@ -63,6 +63,7 @@
                 <img class="icon" id="iconWolf" src="/images/icons/wolf.png" alt="">
                 <img class="icon" id="iconCabbage" src="/images/icons/cabbage.png" alt="">
                 <img class="icon" id="iconGoat" src="/images/icons/goat.png" alt="">
+                <img class="icon-boat" id="iconBoat" src="/images/icons/boat.png" alt="">
             </div>
             <div class="panel">
                 <ul class="panel__buttons">

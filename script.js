@@ -7,6 +7,7 @@ function crossingRight(transfer) {
 
         iconWolf.style.left = '85%';
         iconWolf.style.top = '80%';
+        iconBoat.style.left = '63%';
 
         rightWolf.style.display = "none";
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили волка на правый берег</b></p></div></li>');
@@ -35,7 +36,7 @@ function crossingRight(transfer) {
         if (leftCoast = leftCoast.wolf && leftCoast.goat) {
             console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
         };
-        
+
     } else if (transfer === "Коза") {
         delete leftCoast.peasant;
         delete leftCoast.goat;
@@ -88,6 +89,8 @@ let rightGoat = document.getElementById('rightGoat'),
 let iconWolf = document.getElementById('iconWolf'),
     iconCabbage = document.getElementById('iconCabbage'),
     iconGoat = document.getElementById('iconGoat');
+    iconBoat = document.getElementById('iconBoat');
+    
 
     leftPeasant.style.display = "none";
     leftGoat.style.display = "none";
