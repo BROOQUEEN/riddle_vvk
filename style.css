@@ -93,6 +93,25 @@
     background-size: cover;
     position: relative;
 }
+.icon {
+    position: absolute;
+}
+.icon {
+    width: 150px;
+    height: 150px;
+}
+#iconWolf {
+    left: 5%;
+    top: 35%;
+}
+#iconCabbage {
+    left: 18%;
+    top: 35%;
+}
+#iconGoat {
+    left: 31%;
+    top: 35%;
+}
 .panel {
     background-color:#E6EAF3;
     width: 100%;
