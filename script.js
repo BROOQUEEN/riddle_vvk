@@ -45,6 +45,7 @@ function crossingRight(transfer) {
         
 
         if (leftCoast = leftCoast.wolf && leftCoast.goat) {
+            modalka.style.display = "flex";
             console.log("ПОРАЖЕНИЕ: ВОЛК СЪЕЛ КОЗУ");
         };
 
@@ -59,21 +60,39 @@ function crossingRight(transfer) {
         iconBoat.style.top = '77%';
         iconBoat.style.left = '50%';
 
+        leftGoat.style.display = "block";
         leftPeasant.style.display = "block";
+        rightCabbage.style.display = "none";
+        rightWolf.style.display = "none";
         rightGoat.style.display = "none";
         console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы переместили козу на правый берег</b></p></div></li>');
 
         // console.log("3) На левом берегу остались: " + leftCoast.wolf + " и " + leftCoast.cabbage);
         // console.log("3) На правом берегу теперь: " + rightCoast.peasant + " и " + rightCoast.goat);
-    } else if (transfer === "Человек") {
-        iconBoat.style.top = '60%';
-        iconBoat.style.left = '10%';
-
-        leftPeasant.style.display = "none";
     } else {
         console.log("Что то пошло не так");
     };
 };
+
+function crossingLeft(transfer) {
+    if (transfer === "Человек") {
+        iconBoat.style.top = '60%';
+        iconBoat.style.left = '10%';
+
+        leftPeasant.style.display = "none";
+        leftGoat.style.display = "none";
+
+        console.log('<li class="result__item"><div class="result__item-status"><p>Событие</p></div><div class="result__item-text"><p><b>Вы вернули крестьянина (одного) на левый берег</b></p></div></li>');
+
+    };
+
+    // Если на левом берегу остались Волк и Капуста
+    if (leftCoast = leftCoast.cabbage && leftCoast.wolf) {
+        rightWolf.style.display = "block";
+        rightCabbage.style.display = "block";
+        
+    }
+}
 
 (function () {
     var old = console.log;
